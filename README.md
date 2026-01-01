@@ -1,3 +1,4 @@
+
 # Projeto Integrador - Faculdade
 
 Projeto desenvolvido como trabalho acadêmico, com foco em desenvolvimento web.
@@ -16,3 +17,6 @@ integração básica entre frontend e backend.
 
 ## 📚 Contexto acadêmico
 Projeto desenvolvido em grupo como parte da avaliação do semestre na faculdade.
+
+
+
