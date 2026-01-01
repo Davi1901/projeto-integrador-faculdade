@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f2f5;
+    /* Adicionado para garantir que o conteúdo não seja cortado */
+    overflow-x: hidden;
+}
+
+/* ================================================= */
+/* --- CABEÇALHO (VERSÃO FINAL E CORRIGIDA) --- */
+/* ================================================= */
+
+.header-container {
+    /* --- REMOVIDO --- */
+    /* position: absolute; */
+    /* top: 30px; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    
+    /* --- ADICIONADO/MODIFICADO --- */
+    width: calc(100% - 280px); /* Mantém a largura original, mas de forma mais segura */
+    margin: 30px auto 0;      /* Centraliza horizontalmente e adiciona margem no topo */
+    position: relative;         /* Necessário para o z-index funcionar corretamente */
+    z-index: 10;                /* Garante que o header fique sobre o conteúdo */
+    margin-bottom: -115px;      /* Puxa o conteúdo de baixo para cima, criando o efeito de sobreposição */
+    
+    max-width: 1640px;
+}
+
+.header {
+    width: 100%;
+    height: 85px;
+    background-color: rgba(168, 168, 168, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 172px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Layout principal */
+    display: flex;
+    justify-content: space-between; /* Mantém logo à esquerda e ícones à direita */
+    align-items: center;
+    padding: 0 50px; /* Espaçamento interno nas laterais */
+
+    /* Contexto para posicionamento absoluto do filho */
+    position: relative;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav {
+    /* A SOLUÇÃO DEFINITIVA PARA CENTRALIZAÇÃO */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Estilo dos links */
+    display: flex;
+    gap: 40px; /* Espaço entre os links */
+}
+
+.nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #ccc;
+}
+
+.icons {
+    display: flex;
+    gap: 25px; /* Espaço entre os ícones */
+}
+
+.icons i {
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ================================================= */
+/* --- CONTEÚDO PRINCIPAL (COM CAMINHO CORRIGIDO) --- */
+/* ================================================= */
+
+.main-content {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.left-section {
+    flex-basis: 58%;
+    /* CAMINHO DA IMAGEM CORRIGIDO (relativo ao CSS) */
+    background: url(../../assets/Images/imagem_fundo.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.right-section {
+    flex-basis: 42%;
+    background-color: #f5f5f5; /* ALTERADO DE #fff PARA UM CINZA CLARO */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    margin-left: -80px; 
+    clip-path: path('M 80 0 C 120 250, 120 750, 80 1000 L 2000 1000 L 2000 0 Z');
+}
+
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin-left: 80px; /* Compensa o espaço da curva para centralizar o conteúdo */
+    margin-top: 100px;
+}
+
+.login-form {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 50px;
+    border: 1px solid black;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    color: #333;
+}
+
+.input-group input:focus {
+    border-color: black;
+}
+
+.or-separator {
+    color: black;
+    margin: 25px 0;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: opacity 0.3s;
+    text-decoration: none;
+}
+
+.link-sem-sublinhado {
+    text-decoration: none;
+}
+
+
+.social-btn:hover {
+    opacity: 0.9;
+}
+
+.social-btn.google {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-color: black;
+    
+}
+
+.social-btn.facebook {
+    background-color: #1877F2;
+    color: white;
+    border-color: black;
+}
+
+.social-btn.apple {
+    background-color: #000;
+    color: white;
+    border-color: black;
+}
+
+.signup-link {
+    margin-top: 25px;
+    color: #555;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: black;
+    text-decoration: underline;
+    font-weight: 600;
+    text-decoration: none;  
+}
+.botao-entrar {
+    display: block;
+    margin: 20px auto;
+    width: 150px; /* deixa mais curto que os inputs */
+    height: 45px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-entrar:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* ================================================= */
+/* --- RESPONSIVIDADE (SEM ALTERAÇÕES) --- */
+/* ================================================= */
+
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .left-section {
+        display: none; 
+    }
+
+    .right-section {
+        flex-basis: 100%;
+        margin-left: 0;
+        clip-path: none;
+    }
+    
+    .nav {
+       display: none; /* Esconde a navegação principal em telas menores */
+    }
+    
+    .header-container {
+        /* Ajuste para telas menores */
+        width: 90%;
+        margin-bottom: 0;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* --- Reset Básico e Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+/* --- Container Principal --- */
+.login-container {
+    display: flex;
+    width: 900px;
+    max-width: 90%;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Para as bordas arredondadas funcionarem com a imagem */
+}
+
+/* --- Lado da Imagem (Esquerda) com as Alterações --- */
+.left-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa; /* Fundo cinza claro, caso a imagem não carregue */
+    padding: 0; /* Remove padding para a imagem preencher o espaço */
+}
+
+.left-side img {
+    width: 100%;  /* Garante que a imagem ocupe 100% da largura do seu container */
+    height: 100%; /* Garante que a imagem ocupe 100% da altura do seu container */
+    object-fit: cover; /* ESSA É A PROPRIEDADE CHAVE: ela faz a imagem preencher o espaço, cortando as bordas se necessário, mas SEM ESTICAR */
+    display: block; /* Remove possíveis espaços extras abaixo da imagem */
+}
+
+/* --- Lado do Formulário (Direita) --- */
+.right-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #212529;
+}
+
+/* --- Campos de Input --- */
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    border: 1px solid #ced4da;
+    border-radius: 30px; /* Bordas totalmente arredondadas */
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #212529;
+}
+
+.input-box i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+/* --- Botão Principal --- */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #212529;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #343a40;
+    transform: translateY(-2px);
+}
+
+/* --- Separador "ou entre com" --- */
+.separator, .register {
+    margin: 25px 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* --- Login Social --- */
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #ced4da;
+    color: #6c757d;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #e9ecef;
+    color: #212529;
+}
+
+/* --- Link de Cadastro --- */
+.register a {
+    color: #212529;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        margin: 20px;
+    }
+
+    .left-side {
+        display: none; /* Esconde a imagem em telas pequenas para focar no formulário */
+    }
+
+    .right-side {
+        padding: 30px;
+    }
+}

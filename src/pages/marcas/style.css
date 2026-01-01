@@ -1,0 +1,210 @@
+/* ========== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  overflow-x: hidden;
+}
+
+.header-container {
+  /* --- REMOVIDO --- */
+  /* position: absolute; */
+  /* top: 30px; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  
+  /* --- ADICIONADO/MODIFICADO --- */
+  width: calc(100% - 280px); /* Mantém a largura original, mas de forma mais segura */
+  margin: 30px auto 0;      /* Centraliza horizontalmente e adiciona margem no topo */
+  position: relative;         /* Necessário para o z-index funcionar corretamente */
+  z-index: 10;                /* Garante que o header fique sobre o conteúdo */
+  margin-bottom: -115px;      /* Puxa o conteúdo de baixo para cima, criando o efeito de sobreposição */
+  
+  max-width: 1640px;
+}
+
+.header {
+  width: 100%;
+  height: 85px;
+  background-color: rgba(168, 168, 168, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 172px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Layout principal */
+  display: flex;
+  justify-content: space-between; /* Mantém logo à esquerda e ícones à direita */
+  align-items: center;
+  padding: 0 50px; /* Espaçamento interno nas laterais */
+
+  /* Contexto para posicionamento absoluto do filho */
+  position: relative;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.nav {
+  /* A SOLUÇÃO DEFINITIVA PARA CENTRALIZAÇÃO */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Estilo dos links */
+  display: flex;
+  gap: 40px; /* Espaço entre os links */
+}
+
+.nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #ccc;
+}
+
+.icons {
+  display: flex;
+  gap: 25px; /* Espaço entre os ícones */
+}
+
+.icons i {
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+/* ========== CONTEÚDO GERAL ========== */
+.container {
+  display: flex;
+  gap: 40px;
+  max-width: 1300px;
+  margin: 120px auto 40px; /* empurra o conteúdo para baixo da navbar */
+  padding: 0 20px;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+  width: 220px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+}
+
+.sidebar h3 {
+  margin-bottom: 15px;
+}
+
+.sidebar label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.sidebar input {
+  margin-right: 8px;
+}
+
+.sidebar button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sidebar button:hover {
+  background: #333;
+}
+
+/* ========== PRODUTOS ========== */
+.produtos {
+  flex: 1;
+}
+
+.produtos h2 {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ========== CARD ========== */
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.marca {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.card h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.preco {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+
+.btn:hover {
+  background: #333;
+}

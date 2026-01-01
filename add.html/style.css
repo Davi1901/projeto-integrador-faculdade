@@ -1,0 +1,179 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+:root {
+    --color-primary: #695cfe;
+    --color-dark: #1a1a1a;
+    --color-sidebar-bg: #212121;
+    --color-main-bg: #f3f4f8;
+    --color-white: #ffffff;
+    --color-light-gray: #a0a0a0;
+    --color-text-dark: #333;
+    --color-text-light: #888;
+    --color-border: #e0e0e0;
+    --color-danger: #e94f37;
+    --color-warning: #ffd966;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+body.dark-mode {
+    --color-main-bg: #18191a;
+    --color-white: #242526;
+    --color-text-dark: #e4e6eb;
+    --color-text-light: #b0b3b8;
+    --color-border: #3a3b3c;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--color-main-bg);
+    color: var(--color-text-dark);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.dashboard-container { display: flex; min-height: 100vh; }
+
+
+.sidebar { width: 250px; background-color: var(--color-sidebar-bg); color: var(--color-light-gray); display: flex; flex-direction: column; padding: 20px; flex-shrink: 0; }
+.sidebar-header .logo { font-size: 28px; color: var(--color-white); text-align: center; margin-bottom: 40px; }
+.sidebar-nav { flex-grow: 1; }
+.sidebar-nav .nav-item { margin-bottom: 10px; }
+.sidebar-nav .nav-item a { display: flex; align-items: center; padding: 12px 15px; border-radius: 8px; transition: background-color 0.3s, color 0.3s;
+text-decoration: none;
+ }
+.sidebar-nav .nav-item a i { font-size: 22px; margin-right: 15px; }
+.sidebar-nav .nav-item a:hover { background-color: var(--color-dark);
+text-decoration: none; }
+.sidebar-nav .nav-item.active a { background-color: var(--color-primary); color: var(--color-white); }
+.sidebar-footer { margin-top: auto; text-align: center; font-size: 12px; color: #666; }
+
+
+.main-content { flex-grow: 1; padding: 30px 40px; display: flex; flex-direction: column; gap: 30px; }
+.main-header { display: flex; justify-content: space-between; align-items: center; }
+.header-right { display: flex; align-items: center; gap: 15px; }
+.search-bar { display: flex; align-items: center; background-color: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 0 15px; }
+.search-bar i { font-size: 20px; color: var(--color-text-light); }
+.search-bar input { border: none; outline: none; padding: 10px; background-color: transparent; color: var(--color-text-dark); width: 250px; }
+
+
+.btn { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s; }
+.btn-primary { background-color: var(--color-primary); color: #fff; }
+.btn-primary:hover { opacity: 0.9; }
+.btn-secondary { background-color: var(--color-white); color: var(--color-text-dark); border: 1px solid var(--color-border); }
+.btn-secondary:hover { background-color: var(--color-main-bg); }
+
+
+.content-wrapper { display: flex; gap: 30px; align-items: flex-start; }
+.form-column { width: 420px; flex-shrink: 0; }
+.list-column { flex-grow: 1; display: flex; flex-direction: column; gap: 30px; }
+
+
+.card { background-color: var(--color-white); border-radius: 12px; padding: 25px; box-shadow: var(--card-shadow); }
+.card h3 { font-weight: 600; margin-bottom: 20px; }
+
+
+
+/* --- Formulário 1 (Produto) --- */
+/* Este formulário continua como estava (flex-direction: column) */
+#form-produto { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+#form-produto label { 
+    font-weight: 500; 
+    font-size: 14px; 
+}
+#form-produto input, #form-produto textarea, #form-produto select { 
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid var(--color-border); 
+    border-radius: 8px; 
+    background-color: var(--color-main-bg); 
+    color: var(--color-text-dark); 
+    font-size: 14px; 
+    margin-top: 5px; 
+}
+#form-produto textarea { 
+    resize: vertical; 
+}
+
+/* --- Formulário 2 (Estoque/Preço) --- */
+/* Agora este formulário usa GRID para alinhar em colunas */
+#form-estoque {
+    display: grid;
+    /* Define duas colunas: uma para os labels, outra para os inputs */
+    grid-template-columns: max-content 1fr;
+    /* Espaçamento entre as linhas e colunas */
+    gap: 15px 10px;
+    /* Alinha o texto do label com o centro do input */
+    align-items: center; 
+}
+
+/* Estilo para TODOS os labels dentro do grid */
+#form-estoque label {
+    font-weight: 500;
+    font-size: 14px;
+    text-align: left; /* ALINHA O TEXTO À ESQUERDA (como na sua imagem) */
+}
+
+/* Estilo para TODOS os inputs/selects dentro do grid */
+#form-estoque input,
+#form-estoque select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: var(--color-main-bg);
+    color: var(--color-text-dark);
+    font-size: 14px;
+    margin-top: 0; /* Remove a margem que existia antes */
+}
+
+/* Faz o botão "Adicionar Estoque" ocupar as 2 colunas */
+#form-estoque .form-buttons {
+    grid-column: 1 / -1; /* Ocupa da primeira à última coluna */
+}
+
+/* ==================================================
+===== FIM DA CORREÇÃO DE ALINHAMENTO =====
+==================================================
+*/
+
+.form-buttons { display: flex; gap: 10px; margin-top: 10px; }
+.form-buttons button { flex-grow: 1; }
+
+/* --- Filtros --- */
+.filter-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag { background-color: var(--color-main-bg); border: 1px solid var(--color-border); color: var(--color-text-dark); padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: 500; }
+.tag.active, .tag:hover { background-color: var(--color-text-dark); color: var(--color-white); border-color: var(--color-text-dark); }
+body.dark-mode .tag.active, body.dark-mode .tag:hover { background-color: var(--color-primary); border-color: var(--color-primary); }
+
+/* --- Lista de Produtos --- */
+.product-list { display: flex; flex-direction: column; gap: 15px; max-height: 60vh; overflow-y: auto; padding-right: 10px; }
+.product-item { display: flex; align-items: center; gap: 20px; padding: 15px; border: 1px solid var(--color-border); border-radius: 10px; }
+.product-image { width: 80px; height: 80px; border-radius: 8px; object-fit: cover; }
+.product-info { flex-grow: 1; }
+.product-info h4 { font-size: 16px; font-weight: 600; }
+.product-info p { font-size: 14px; color: var(--color-text-light); margin: 4px 0; }
+.product-actions { display: flex; gap: 10px; }
+.btn-edit, .btn-delete { padding: 8px 12px; font-size: 14px; }
+.btn-edit { background-color: var(--color-warning); color: #333; }
+.btn-delete { background-color: var(--color-danger); color: #fff; }
+
+/* --- Scrollbar customizado --- */
+.product-list::-webkit-scrollbar { width: 6px; }
+.product-list::-webkit-scrollbar-track { background: transparent; }
+.product-list::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+body.dark-mode .product-list::-webkit-scrollbar-thumb { background: #444; }

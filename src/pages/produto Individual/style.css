@@ -1,0 +1,67 @@
+/* ======================================================= */
+/* ESTILOS GERAIS (REMOVIDO HEADER/NAVBAR DAQUI)         */
+/* ======================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #1a1a1a;
+}
+
+main {
+    padding-top: 150px; /* Joga o conteúdo para baixo da navbar flutuante */
+}
+
+/* ======================================================= */
+/* ESTILOS ESPECÍFICOS DA PÁGINA DE PRODUTO INDIVIDUAL   */
+/* (TODO O CSS DA NAVBAR FOI REMOVIDO DAQUI)             */
+/* ======================================================= */
+.produto-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+.galeria-produto { display: flex; gap: 20px; flex: 0 0 55%; }
+#produto-thumbnails { display: flex; flex-direction: column; gap: 15px; flex-shrink: 0; }
+.thumb-item { width: 80px; height: 80px; border: 2px solid #EAEAEA; border-radius: 10px; cursor: pointer; object-fit: contain; padding: 5px; background-color: #F7F7F7; transition: border-color 0.2s ease; }
+.thumb-item:hover { border-color: #999; }
+.thumb-item.active-thumb { border-color: #1C1C1C; }
+.produto-imagem-grande { flex-grow: 1; position: relative; background-color: #F7F7F7; border-radius: 16px; display: flex; align-items: center; justify-content: center; padding: 20px; min-height: 450px; }
+#produto-imagem { width: 100%; max-width: 450px; height: auto; object-fit: contain; }
+.arrow { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(255, 255, 255, 0.9); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; color: #333; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+#arrow-left { left: 15px; }
+#arrow-right { right: 15px; }
+
+.produto-detalhes { flex: 0 0 40%; padding-top: 10px; }
+.produto-nome-grande { font-size: 40px; font-weight: 800; line-height: 1.2; margin-bottom: 15px; text-transform: uppercase; }
+.estrelas-avaliacao { color: #1C1C1C; font-size: 18px; margin-bottom: 15px; }
+.preco-container { margin-bottom: 25px; }
+.preco-antigo { font-size: 16px; color: #333; font-weight: 500; text-decoration: line-through; display: block; }
+.produto-preco-grande { font-size: 48px; font-weight: 800; color: #1C1C1C; line-height: 1; margin: 0; }
+.seletor-tamanho .label { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.tamanhos-container { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 35px; }
+.tamanho-btn { background-color: transparent; border: 2px solid #1C1C1C; border-radius: 4px; height: 45px; min-width: 45px; text-align: center; font-weight: 700; font-size: 16px; cursor: pointer; transition: all 0.2s ease; padding: 0 10px; }
+.tamanho-btn:hover { background-color: #f0f0f0; }
+.tamanho-btn.active { background-color: #1C1C1C; color: white; }
+.botao-carrinho-integrado { height: 45px; width: 45px; border: 2px solid #1C1C1C; border-radius: 4px; background-color: transparent; font-size: 18px; cursor: pointer; transition: all 0.2s ease; }
+.botao-carrinho-integrado:hover { background-color: #1C1C1C; color: white; }
+.botoes-acao { display: block; }
+.botao-comprar-grande { width: 100%; padding: 18px; font-size: 18px; font-weight: 700; background-color: #D70004; color: #FFFFFF; border: none; border-radius: 8px; cursor: pointer; text-transform: uppercase; letter-spacing: 1.5px; transition: all 0.3s ease; }
+
+.semelhantes-section { max-width: 1200px; margin: 0 auto 60px auto; padding: 0 20px; }
+.caracteristicas-box { border: 1px solid #e0e0e0; border-radius: 16px; padding: 30px; margin-bottom: 60px; background-color: #fff; }
+.caracteristicas-titulo { border-top: none; padding-top: 0; margin-bottom: 15px; font-size: 22px; font-weight: 700; }
+.produto-descricao { font-size: 15px; line-height: 1.7; color: #555; }
+.semelhantes-section .section-title { font-size: 28px; font-weight: 700; text-align: left; margin-bottom: 30px; }

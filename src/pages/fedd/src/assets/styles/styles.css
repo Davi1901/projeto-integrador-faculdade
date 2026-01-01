@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+/* -------------------------
+   HEADER
+------------------------- */
+.main-header {
+    position: fixed;
+    top: 30px;
+    left: 140px;
+    right: 140px;
+    max-width: 1920px;
+    margin: 0 auto;
+    z-index: 1000;
+    height: 85px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: rgba(168, 168, 168, 0.3);
+    border-radius: 100px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 48px;
+    list-style: none;
+    padding-top: 15px;
+}
+
+.main-nav a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1C1C1C;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    color: #D70004;
+}
+
+.header-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.header-icons a {
+    font-size: 28px;
+    color: #1C1C1C;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: #D70004;
+}
+
+/* -------------------------
+   CONTEÚDO PRINCIPAL
+------------------------- */
+main {
+    padding-top: 120px;
+}
+
+/* -------------------------
+   SEÇÃO HERO (BANNER)
+------------------------- */
+.hero-section {
+    margin: 30px 140px;
+    border-radius: 50px;
+    position: relative;
+    height: 35vw;
+    display: flex;
+    align-items: center;
+    padding: 0 95px;
+    color: #F1F1F1;
+    overflow: hidden;
+}
+
+.hero-section .carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-section .carousel-inner,
+.hero-section .carousel-item {
+    height: 100%;
+}
+
+.hero-section .carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 790px;
+    text-shadow: 2px 2px 4px rgba(90, 90, 90, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 10%;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 12px;
+}
+
+.hero-description {
+    font-size: 25px;
+    line-height: 30px;
+    max-width: 700px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.btn {
+    padding: 10px 32px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    box-shadow: #1c1c1c1f 0px 0px 4px, #1c1c1c1f 0px 0px 4px;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-primary {
+    background-color: #D70004;
+    color: #f1f1f1;
+}
+
+.btn-primary:hover {
+    background-color: #F1F1F1;
+    color: #1C1C1C;
+    border-color: transparent;
+}
+
+.btn-secondary {
+    background-color: #F1F1F1;
+    color: #1C1C1C;
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
+    color: #f1f1f1;
+    border: 2px solid #f1f1f1;
+}
+
+.carousel-indicators-custom {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    margin: 0;
+    width: auto;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    z-index: 3;
+}
+
+.indicator-dot {
+    height: 7px;
+    width: 18px;
+    background-color: #1c1c1c;
+    border-radius: 23px;
+    transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+    width: 48px;
+    background-color: #D70004;
+}
+
+/* -------------------------
+   SEÇÃO DE PRODUTOS
+------------------------- */
+.product-showcase {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* A grade de produtos - agora com 3 colunas usando Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas de larguras iguais */
+    gap: 35px; /* Espaçamento entre os cards */
+}
+
+/* Link que envolve o card */
+a.product-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* O card do produto */
+.product-card {
+    background-color: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Container da imagem */
+.product-image-container {
+    background-color: #F7F7F7;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+/* Bloco de informações abaixo da imagem */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.product-brand {
+    font-size: 13px;
+    color: #FFFFFF;
+    background-color: #1C1C1C;
+    padding: 6px 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+/* O rodapé do card, com preço e botões */
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1C1C1C;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.action-btn:hover {
+    background-color: #444;
+}
+
+.cart-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+}
+
+.buy-btn {
+    height: 48px;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- SEÇÃO RESPONSIVA PARA TELAS MENORES --- */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 coluna para celulares */
+    }
+
+    .product-showcase {
+        margin: 50px auto;
+        padding: 0 15px;
+    }
+}
+
+/* ======================================================= */
+/* ESTILOS ADICIONAIS PARA PÁGINA DE PRODUTO INDIVIDUAL  */
+/* ======================================================= */
+
+/* --- Caixa de Características --- */
+.caracteristicas-box {
+    border: 1px solid #e0e0e0; /* Borda cinza clara */
+    border-radius: 16px;
+    padding: 30px;
+    margin-top: 40px; /* Espaço acima da caixa */
+}
+
+.caracteristicas-box .caracteristicas-titulo {
+    border-top: none; /* Remove a linha que tinha antes */
+    padding-top: 0;
+    margin-bottom: 15px;
+}
+
+/* --- Seção de Produtos Semelhantes --- */
+.semelhantes-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.semelhantes-section .section-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: left; /* Alinha o título "Semelhantes" à esquerda */
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+/* Usamos o mesmo .product-grid do feed, mas garantimos que o espaçamento funcione */
+.semelhantes-section .product-grid {
+    gap: 20px;
+}

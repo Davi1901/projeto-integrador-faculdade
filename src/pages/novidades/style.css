@@ -1,0 +1,350 @@
+/* --- Reset Básico e Configurações Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f7;
+    color: #1a1a1a;
+}
+
+/* ================================================= */
+/* === ESTILOS DA NAVBAR (COM IMAGEM DA LOGO) === */
+/* ================================================= */
+.header-container {
+    width: calc(100% - 280px); 
+    margin: 30px auto 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    max-width: 1640px;
+}
+
+.header {
+  width: 100%;
+  height: 85px;
+  background-color: rgba(180, 190, 180, 0.3); 
+  backdrop-filter: blur(15px); 
+  -webkit-backdrop-filter: blur(15px); 
+  border-radius: 50px; 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  margin: 20px auto 0 auto; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  position: relative; /* Mudado de absolute para relative dentro do container */
+}
+
+/* ESTILO DA IMAGEM DA LOGO */
+.logo img {
+    height: 40px; 
+    width: auto; 
+    display: block; 
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 40px;
+}
+
+.nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: white;
+}
+
+.icons {
+    display: flex;
+    gap: 25px;
+}
+
+.icons i {
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+/* --- Conteúdo Principal --- */
+.content {
+    padding-top: 150px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* --- Seção de Promoções --- */
+.promo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.promo-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* CAMINHO DA IMAGEM CORRIGIDO (relativo ao CSS) */
+    background-image: url('../../assets/Images/imamgem_fundo2.jpg');
+    background-size: cover;
+    background-position: center left; 
+    border-radius: 20px;
+    overflow: hidden; 
+    min-height: 350px;
+    color: white;
+}
+
+.promo-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.promo-text {
+    padding: 40px 50px;
+    width: 60%; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.discount-tag {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.promo-text h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 10px 0;
+}
+
+.promo-text hr {
+    border: none;
+    height: 2px;
+    background-color: white;
+    width: 80px;
+    margin: 15px 0;
+}
+
+.description {
+    font-size: 1rem;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.promo-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: #d90429;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #ef233c;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #1a1a1a;
+}
+
+.btn-secondary:hover {
+    background-color: #f1f1f1;
+}
+
+.promo-shoe-img {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 55%;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 15px 20px rgba(0,0,0,0.3));
+    z-index: 3;
+    transform: rotate(0deg);
+}
+
+/* --- Layout Invertido --- */
+.banner--reversed {
+    justify-content: flex-end;
+    background-position: center right;
+}
+
+.banner--reversed::before {
+    left: auto;
+    right: 0;
+}
+
+.banner--reversed .promo-shoe-img {
+    right: auto;
+    left: 0;
+}
+
+.banner--reversed .promo-text {
+    align-items: center;
+    text-align: center;
+}
+
+.banner--reversed .promo-text hr {
+    margin-left: auto;
+    margin-right: auto;
+}
+.banner--reversed .promo-text .promo-buttons {
+    justify-content: center;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+    .header {
+        padding: 0 20px;
+        height: 70px;
+    }
+
+    /* Ajusta o tamanho da logo em mobile */
+    .logo img {
+        height: 30px;
+    }
+    
+    .nav {
+        display: none;
+    }
+    
+    .header-container {
+        width: 90%;
+    }
+
+    .promo-banner::before,
+    .banner--reversed::before {
+        width: 100%;
+        left: 0;
+        right: auto;
+    }
+    
+    .promo-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .banner--reversed {
+        justify-content: flex-start;
+    }
+
+    .promo-text {
+        width: 100%;
+        padding: 30px;
+        align-items: center;
+    }
+    
+    .promo-text h2 {
+        font-size: 2.5rem;
+    }
+    
+    .promo-text hr {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .promo-shoe-img {
+        position: relative; 
+        transform: none;
+        width: 80%;
+        left: auto;
+        right: auto;
+        top: auto;
+        margin-top: -50px; 
+        margin-bottom: 20px;
+    }
+}
+
+/* --- Rodapé --- */
+.content {
+    padding-bottom: 80px; 
+}
+
+.site-footer {
+    background-color: #1a1a1a;
+    color: #f4f4f7;
+    padding: 40px 5%;
+    border-top: 1px solid #333;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.footer-container p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #f4f4f7;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d90429; 
+}

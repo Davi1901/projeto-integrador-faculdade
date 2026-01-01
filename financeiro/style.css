@@ -1,0 +1,356 @@
+/* --- Importação da Fonte e Reset Básico --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Variáveis de Cor para fácil manutenção */
+:root {
+    --color-primary: #695cfe;
+    --color-dark: #1a1a1a;
+    --color-sidebar-bg: #212121;
+    --color-main-bg: #f3f4f8;
+    --color-white: #ffffff;
+    --color-light-gray: #a0a0a0;
+    --color-text-dark: #333;
+    --color-text-light: #888;
+    --color-border: #e0e0e0;
+    --color-success: #45b65a;
+    --color-danger: #e94f37;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--color-main-bg);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Layout Principal --- */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Estilos da Barra Lateral (Sidebar) --- */
+.sidebar {
+    width: 250px;
+    background-color: var(--color-sidebar-bg);
+    color: var(--color-light-gray);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar-header .logo {
+    font-size: 28px;
+    color: var(--color-white);
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar-nav .nav-item {
+    margin-bottom: 10px;
+}
+
+.sidebar-nav .nav-item a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.sidebar-nav .nav-item a i {
+    font-size: 22px;
+    margin-right: 15px;
+}
+
+.sidebar-nav .nav-item a:hover {
+    background-color: var(--color-dark);
+    text-decoration: none;
+}
+
+/* Estilo do item ativo no menu */
+.sidebar-nav .nav-item.active a {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.sidebar-nav .has-dropdown a {
+    justify-content: space-between;
+}
+
+/* --- Estilos do Conteúdo Principal --- */
+.main-content {
+    flex-grow: 1; /* Ocupa o espaço restante */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espaçamento entre as seções */
+}
+
+/* Cabeçalho do conteúdo principal */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .breadcrumb {
+    color: var(--color-text-light);
+    font-size: 14px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-actions i {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.date-range {
+    background-color: var(--color-white);
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+/* Estilo base para todos os cards */
+.card {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+}
+
+/* Seção de Cartões de Estatísticas */
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanho igual */
+    gap: 25px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: var(--color-text-light);
+}
+
+.card-header h3 {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.card-header i {
+    cursor: pointer;
+}
+
+.stats-cards .card-body h2 {
+    font-size: 32px;
+    color: var(--color-text-dark);
+}
+
+.stats-cards .card-body {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.percentage-increase {
+    color: var(--color-success);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.stats-cards .card-footer {
+    color: var(--color-text-light);
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Seção de Análise (Gráfico e Vendedores) */
+.analytics-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Gráfico ocupa 2/3 e vendedores 1/3 */
+    gap: 25px;
+}
+
+/* Gráfico de Vendas */
+.graph-toggles {
+    display: flex;
+    gap: 5px;
+    background-color: var(--color-main-bg);
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.graph-toggles .toggle-btn {
+    border: none;
+    background-color: transparent;
+    padding: 5px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--color-text-light);
+}
+
+.graph-toggles .toggle-btn.active {
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.graph-placeholder {
+    width: 100%;
+    height: auto;
+}
+
+/* Melhores Vendedores */
+.best-sellers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.seller-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.seller-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.seller-info {
+    flex-grow: 1;
+}
+
+.seller-info p {
+    font-weight: 500;
+    color: var(--color-text-dark);
+}
+
+.seller-info span {
+    font-size: 12px;
+    color: var(--color-text-light);
+}
+
+.seller-price {
+    font-weight: 600;
+}
+
+.report-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.report-btn:hover {
+    background-color: #333;
+}
+
+/* Tabela de Pedidos Recentes */
+.orders-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaços entre as células */
+}
+
+.orders-table th, .orders-table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.orders-table th {
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.orders-table td {
+    color: var(--color-text-dark);
+    vertical-align: middle;
+}
+
+.orders-table td .status {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status.delivered {
+    background-color: var(--color-primary);
+}
+
+.status.canceled {
+    background-color: var(--color-danger);
+}
+
+/* Rodapé */
+.main-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-light);
+    font-size: 14px;
+}
+
+.main-footer-bottom nav {
+    display: flex;
+    gap: 20px;
+}

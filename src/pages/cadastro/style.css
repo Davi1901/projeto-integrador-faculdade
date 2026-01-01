@@ -1,0 +1,218 @@
+/* --- Reset Básico e Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
+    position: relative;
+}
+
+/* --- Header Flutuante --- */
+.header-container {
+    width: calc(100% - 280px); 
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100; /* Aumentei o z-index para garantir que fique acima */
+    max-width: 1640px;
+}
+
+.header {
+    width: 100%;
+    height: 85px;
+    background-color: rgba(168, 168, 168, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 172px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    position: relative;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 40px; 
+}
+
+.nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+.nav a:hover {
+    color: #ccc;
+}
+
+.icons {
+    display: flex;
+    gap: 25px; 
+}
+
+.icons i {
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* --- Layout Principal --- */
+.main-content {
+    display: grid;
+    grid-template-columns: 45% 55%; 
+    height: 100vh;
+}
+
+/* --- Seção do Formulário (Esquerda) --- */
+.form-section {
+    background: #f5f5f5; 
+    display: flex;
+    justify-content: center;
+    /* CORREÇÃO 1: Mudado de center para flex-start para respeitar a margem superior */
+    align-items: flex-start; 
+    padding: 40px;
+    border-top-right-radius: 150px; 
+    /* CORREÇÃO 2: Permite rolar se a tela for pequena */
+    overflow-y: auto; 
+}
+
+.login-container {
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    /* CORREÇÃO 3: Empurra o formulário para baixo para sair de trás do menu */
+    margin-top: 160px; 
+    margin-bottom: 50px; /* Espaço extra no final */
+    z-index: 1;
+}
+
+.form-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: black; 
+}
+
+.input-group input {
+    width: 100%;
+    padding: 18px 20px 18px 50px; 
+    background-color: #fff; 
+    border: 1px solid #dcdce1; 
+    border-radius: 30px;
+    font-size: 1rem;
+    color: #000; 
+    border-color: #000;
+}
+
+.or-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #aaa;
+    margin: 30px 0;
+}
+
+.or-separator::before, .or-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.or-separator span {
+    padding: 0 15px;
+    color: #000;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: opacity 0.3s;
+    border: 1px solid black;
+    text-decoration: none;
+}
+
+.social-btn.google { 
+    background-color: #fff; 
+    color: black; 
+    border-color: #000;
+}
+
+.social-login a {
+    text-decoration: none;
+}
+
+.social-btn.facebook { 
+    background-color: #1877F2; 
+    color: #fff; 
+    border-color: #000 
+}
+
+.social-btn.apple { 
+    background-color: #000;
+    color: #fff; 
+    border-color: black;
+}
+
+.signup-link {
+    margin-top: 30px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.signup-link a {
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* --- Seção da Imagem (Direita) --- */
+.image-section {
+    background-image: url('../../assets/Images/imamgem_fundo2.jpg');
+    background-size: cover;
+    background-position: center;
+}

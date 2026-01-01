@@ -1,0 +1,278 @@
+/* --- Importação da Fonte e Reset Básico --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Variáveis de Cor para fácil manutenção */
+:root {
+    --color-primary: #695cfe;
+    --color-dark: #1a1a1a;
+    --color-sidebar-bg: #212121;
+    --color-main-bg: #f3f4f8;
+    --color-white: #ffffff;
+    --color-light-gray: #a0a0a0;
+    --color-text-dark: #333;
+    --color-text-light: #888;
+    --color-border: #e0e0e0;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para o Modo Escuro */
+body.dark-mode {
+    --color-main-bg: #18191a;
+    --color-white: #242526;
+    --color-text-dark: #e4e6eb;
+    --color-text-light: #b0b3b8;
+    --color-border: #3a3b3c;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--color-main-bg);
+    color: var(--color-text-dark);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Layout Principal Fluido --- */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    /* NENHUMA LARGURA MÁXIMA (max-width) É DEFINIDA AQUI */
+    /* Isso permite que o container ocupe 100% da largura da janela */
+}
+
+/* --- Estilos da Barra Lateral (Sidebar) --- */
+.sidebar {
+    width: 250px; /* Largura fixa para o menu lateral */
+    background-color: var(--color-sidebar-bg);
+    color: var(--color-light-gray);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex-shrink: 0; /* Impede que a sidebar encolha quando o conteúdo principal crescer */
+}
+
+.sidebar-header .logo {
+    font-size: 28px;
+    color: var(--color-white);
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+}
+
+.sidebar-nav .nav-item {
+    margin-bottom: 10px;
+}
+
+.sidebar-nav .nav-item a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.sidebar-nav .nav-item a i {
+    font-size: 22px;
+    margin-right: 15px;
+}
+
+.sidebar-nav .nav-item a:hover {
+    background-color: var(--color-dark);
+    text-decoration: none;
+}
+
+.sidebar-nav .nav-item.active a {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+/* --- Estilos do Conteúdo Principal (que agora se expande) --- */
+.main-content {
+    flex-grow: 1; /* ESSA É A PROPRIEDADE CHAVE! */
+    /* Ela faz com que este elemento ocupe todo o espaço restante na horizontal */
+    padding: 30px 40px; /* Aumentei um pouco o padding lateral para melhor espaçamento em telas largas */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-x: hidden; /* Previne a criação de uma barra de rolagem horizontal desnecessária */
+}
+
+/* Cabeçalho */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Barra de Busca */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 0 15px;
+}
+.search-bar i {
+    font-size: 20px;
+    color: var(--color-text-light);
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: transparent;
+    color: var(--color-text-dark);
+    width: 250px; /* Um pouco mais largo */
+}
+
+/* Estilos de Botão Genéricos */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+.btn-primary:hover {
+    opacity: 0.9;
+}
+.btn-secondary {
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-border);
+}
+.btn-secondary:hover {
+    background-color: var(--color-main-bg);
+}
+
+/* Seção de Filtros */
+.filter-section h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.filter-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.tag {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-light);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.tag.active, .tag:hover {
+    background-color: var(--color-text-dark);
+    color: var(--color-white);
+    border-color: var(--color-text-dark);
+}
+body.dark-mode .tag.active, body.dark-mode .tag:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+
+/* Grade de Produtos - A MÁGICA DA RESPONSIVIDADE ACONTECE AQUI */
+.product-grid {
+    display: grid;
+    /* Esta linha cria colunas responsivas. Em telas largas, mais colunas aparecerão automaticamente para preencher o espaço */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Card de Produto */
+.card {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+}
+.product-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.product-category {
+    font-size: 14px;
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+}
+.product-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+.btn-edit {
+    margin-top: auto;
+    background-color: var(--color-main-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-dark);
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-edit:hover {
+    background-color: #ddd;
+}
+body.dark-mode .btn-edit:hover {
+     background-color: #3a3b3c;
+}

@@ -1,0 +1,86 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Remova o background-image daqui */
+  }
+  
+  body,
+  html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background: url(./Imagens/GOOFY.jpg), linear-gradient(to top, #94a9c9, #c1d6f2);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+  }
+  /* ======== TELA 1 - Navegação ======== */
+  .background {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+  }
+  
+  .card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    /* espaço superior pro link */
+    width: 220px;
+    height: 550px;
+    border-radius: 30px;
+    background-size: covEr;
+    background-position: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+  }
+  
+  .card.home {
+    width: 250px;
+    height: 600px;
+  }
+  
+  .card-link {
+    position: absolute;
+    top: 30px;
+    font-size: 18px;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card span {
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+    z-index: 1;
+  }
+  
+  .card.home {
+    width: 250px;
+    height: 600px;
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.02);
+  }
